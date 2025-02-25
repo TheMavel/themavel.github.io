@@ -3,320 +3,432 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Open Design</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Modern website with stunning 3D elements and professional design">
+    <meta name="keywords" content="modern website, 3D elements, web design, responsive design">
+    <title>Modern Website with 3D Elements</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Three.js for 3D elements -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="site-header">
-        <div class="container">
+    <!-- Header -->
+    <header>
+        <div class="header-container container">
             <div class="logo">
-                <a href="#"><span>Modern</span>Design</a>
+                <i class="fas fa-cube"></i> Modern<span>3D</span>
             </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="#services">Services</a></li>
+            
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-            <button class="mobile-menu-toggle" aria-label="Toggle Menu">
-                <span></span>
-                <span></span>
-                <span></span>
+            
+            <button class="mobile-menu-btn" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
             </button>
         </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </header>
-
-    <main>
-        <section id="services" class="services-section">
-            <div class="container">
-                <div class="section-intro">
-                    <h2>Our Services</h2>
-                    <p class="lead">We create digital experiences that stand out</p>
-                </div>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="icon">
-                            <i class="fas fa-paint-brush"></i>
-                        </div>
-                        <h3>Web Design</h3>
-                        <p>Beautiful, functional websites that engage your audience and drive results.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h3>Development</h3>
-                        <p>Clean, efficient code that brings your designs to life with modern technologies.</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="icon">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <h3>Mobile First</h3>
-                        <p>Responsive experiences that work beautifully on every device and screen size.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Integrated Hero Section -->
-        <section class="hero-section">
-            <div class="container">
-                <div class="hero-content">
-                    <h1>Creating digital experiences that inspire</h1>
-                    <p>We combine beautiful design with powerful technology to create websites that engage and convert.</p>
-                    <div class="cta-buttons">
-                        <a href="#contact" class="btn btn-primary">Start a Project</a>
-                        <a href="#projects" class="btn btn-secondary">View Our Work</a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <div class="image-container">
-                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" alt="Modern workspace with computer">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="about-section">
-            <div class="container">
-                <div class="about-content">
-                    <div class="about-text">
-                        <h2>About Us</h2>
-                        <p class="lead">We're a team of designers, developers, and strategists passionate about creating exceptional digital experiences.</p>
-                        <p>Our approach combines creative thinking with technical expertise to deliver websites that not only look beautiful but also perform exceptionally well. We focus on clean, intuitive designs that guide users through meaningful interactions with your brand.</p>
-                        <p>Every project begins with understanding your goals and audience, ensuring that the final product aligns perfectly with your vision and business objectives.</p>
-                    </div>
-                    <div class="about-image">
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Our team collaborating">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="projects-section">
-            <div class="container">
-                <div class="section-intro">
-                    <h2>Our Projects</h2>
-                    <p class="lead">Explore our recent work and see how we've helped our clients succeed</p>
-                </div>
-                <div class="project-grid">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2015&q=80" alt="E-commerce website project">
-                        </div>
-                        <div class="project-info">
-                            <h3>E-Commerce Platform</h3>
-                            <p>A modern shopping experience with seamless checkout and personalized recommendations.</p>
-                            <a href="#" class="btn btn-text">View Case Study <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Mobile app interface">
-                        </div>
-                        <div class="project-info">
-                            <h3>Health & Wellness App</h3>
-                            <p>An intuitive mobile application helping users track and improve their wellbeing.</p>
-                            <a href="#" class="btn btn-text">View Case Study <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Corporate website redesign">
-                        </div>
-                        <div class="project-info">
-                            <h3>Corporate Rebrand</h3>
-                            <p>A complete digital transformation for a leading financial services company.</p>
-                            <a href="#" class="btn btn-text">View Case Study <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="testimonials" class="testimonials-section">
-            <div class="container">
-                <div class="section-intro">
-                    <h2>What Our Clients Say</h2>
-                    <p class="lead">Hear from the businesses we've helped transform</p>
-                </div>
-                <div class="testimonial-slider">
-                    <div class="testimonial-card active">
-                        <div class="quote">
-                            <i class="fas fa-quote-left"></i>
-                            <p>"Working with this team was a game-changer for our business. They understood our vision perfectly and delivered a website that exceeded our expectations in both design and functionality."</p>
-                        </div>
-                        <div class="client">
-                            <div class="client-image">
-                                <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson">
-                            </div>
-                            <div class="client-info">
-                                <h4>Sarah Johnson</h4>
-                                <p>CEO, Innovate Solutions</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="quote">
-                            <i class="fas fa-quote-left"></i>
-                            <p>"The attention to detail and commitment to quality was impressive. Our new website has significantly increased our conversion rates and customer engagement."</p>
-                        </div>
-                        <div class="client">
-                            <div class="client-image">
-                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
-                            </div>
-                            <div class="client-info">
-                                <h4>Michael Chen</h4>
-                                <p>Marketing Director, TechFlow</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="quote">
-                            <i class="fas fa-quote-left"></i>
-                            <p>"Not only did they deliver an exceptional website, but their ongoing support and responsiveness have made them a valuable long-term partner for our business."</p>
-                        </div>
-                        <div class="client">
-                            <div class="client-image">
-                                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma Rodriguez">
-                            </div>
-                            <div class="client-info">
-                                <h4>Emma Rodriguez</h4>
-                                <p>Founder, Artisan Collective</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-controls">
-                    <button class="prev" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
-                    <div class="indicators">
-                        <button class="indicator active" aria-label="Testimonial 1"></button>
-                        <button class="indicator" aria-label="Testimonial 2"></button>
-                        <button class="indicator" aria-label="Testimonial 3"></button>
-                    </div>
-                    <button class="next" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact-section">
-            <div class="container">
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <h2>Let's Work Together</h2>
-                        <p class="lead">Ready to start your project? Get in touch with us today.</p>
-                        <div class="contact-details">
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <p>hello@moderndesign.com</p>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <p>+1 (555) 123-4567</p>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <p>123 Design Street, Creative City</p>
-                            </div>
-                        </div>
-                        <div class="social-links">
-                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <div class="contact-form">
-                        <form id="contactForm">
-                            <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="subject">Subject</label>
-                                <input type="text" id="subject" name="subject" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" rows="5" required></textarea>
-                            </div>
-                            <div class="form-group checkbox">
-                                <input type="checkbox" id="consent" name="consent" required>
-                                <label for="consent">I consent to having this website store my submitted information so they can respond to my inquiry. See our <a href="#">privacy policy</a>.</label>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Send Message</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
+    
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <!-- 3D Canvas Container -->
+        <div id="hero-canvas-container"></div>
+        
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <a href="#"><span>Modern</span>Design</a>
-                    <p>Creating exceptional digital experiences that inspire and engage.</p>
+            <div class="hero-content animate-fade-in">
+                <h1 class="hero-title">
+                    Create <span class="highlight">Stunning</span> Websites with 3D Elements
+                </h1>
+                <p class="hero-subtitle">
+                    Elevate your online presence with modern design, interactive 3D elements, and exceptional user experience.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="button">View Our Work</a>
+                    <a href="#contact" class="button button-outline">Get in Touch</a>
                 </div>
-                <div class="footer-links">
-                    <div class="link-group">
-                        <h4>Services</h4>
-                        <ul>
-                            <li><a href="#">Web Design</a></li>
-                            <li><a href="#">Development</a></li>
-                            <li><a href="#">Mobile Apps</a></li>
-                            <li><a href="#">SEO</a></li>
-                        </ul>
-                    </div>
-                    <div class="link-group">
-                        <h4>Company</h4>
-                        <ul>
-                            <li><a href="#about">About Us</a></li>
-                            <li><a href="#projects">Projects</a></li>
-                            <li><a href="#">Careers</a></li>
-                            <li><a href="#">Blog</a></li>
-                        </ul>
-                    </div>
-                    <div class="link-group">
-                        <h4>Legal</h4>
-                        <ul>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms of Service</a></li>
-                            <li><a href="#">Cookie Policy</a></li>
-                            <li><a href="#">GDPR</a></li>
-                        </ul>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="about section">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            
+            <div class="about-content">
+                <div class="about-text animate-slide-left">
+                    <h3>We Create Digital Experiences That Stand Out</h3>
+                    <p>
+                        We are a team of passionate designers and developers dedicated to creating exceptional digital experiences. Our approach combines cutting-edge technology with thoughtful design to deliver websites that not only look stunning but also perform flawlessly.
+                    </p>
+                    <p>
+                        With expertise in 3D web elements, responsive design, and user experience optimization, we help businesses of all sizes establish a strong online presence that engages visitors and drives results.
+                    </p>
+                    <a href="#contact" class="button mt-4">Start Your Project</a>
+                </div>
+                
+                <div class="about-image animate-slide-right">
+                    <div class="image-3d-container">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="Our team working together">
+                        <div class="image-3d-layer"></div>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="currentYear">2024</span> ModernDesign. All rights reserved.</p>
-                <div class="back-to-top">
-                    <a href="#" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
+        </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section id="services" class="services section">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            
+            <div class="services-grid">
+                <div class="service-card animate-fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3 class="service-title">3D Web Elements</h3>
+                    <p class="service-description">
+                        Enhance your website with interactive 3D elements that captivate visitors and create memorable experiences.
+                    </p>
                 </div>
+                
+                <div class="service-card animate-fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="service-title">Web Development</h3>
+                    <p class="service-description">
+                        Custom website development using the latest technologies to ensure fast, responsive, and secure websites.
+                    </p>
+                </div>
+                
+                <div class="service-card animate-fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3 class="service-title">UI/UX Design</h3>
+                    <p class="service-description">
+                        User-centered design that focuses on creating intuitive, accessible, and visually appealing interfaces.
+                    </p>
+                </div>
+                
+                <div class="service-card animate-fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="service-title">Responsive Design</h3>
+                    <p class="service-description">
+                        Websites that look and function perfectly on all devices, from desktops to smartphones.
+                    </p>
+                </div>
+                
+                <div class="service-card animate-fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3 class="service-title">SEO Optimization</h3>
+                    <p class="service-description">
+                        Improve your website's visibility in search engines and drive more organic traffic to your business.
+                    </p>
+                </div>
+                
+                <div class="service-card animate-fade-in">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="service-title">Performance Optimization</h3>
+                    <p class="service-description">
+                        Speed up your website, improve user experience, and boost conversion rates with our optimization services.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects" class="projects section">
+        <!-- 3D Canvas Container -->
+        <div id="project-canvas-container"></div>
+        
+        <div class="container">
+            <h2 class="section-title">Our Projects</h2>
+            
+            <div class="projects-grid">
+                <div class="project-card animate-fade-in">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="E-commerce Website">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">E-commerce</span>
+                        <h3 class="project-title">Modern Online Store</h3>
+                        <p class="project-description">
+                            A fully responsive e-commerce platform with 3D product previews and seamless checkout experience.
+                        </p>
+                        <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="project-card animate-fade-in">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80" alt="Portfolio Website">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Portfolio</span>
+                        <h3 class="project-title">Creative Portfolio</h3>
+                        <p class="project-description">
+                            An interactive portfolio website for a digital artist featuring 3D galleries and animations.
+                        </p>
+                        <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="project-card animate-fade-in">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1736&q=80" alt="Real Estate Website">
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category">Real Estate</span>
+                        <h3 class="project-title">Property Showcase</h3>
+                        <p class="project-description">
+                            A real estate website with virtual 3D property tours and interactive neighborhood maps.
+                        </p>
+                        <a href="#" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section">
+        <div class="container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            
+            <div class="testimonials-container">
+                <div class="testimonial animate-fade-in">
+                    <p class="testimonial-text">
+                        "The 3D elements they added to our website completely transformed our online presence. We've seen a 40% increase in user engagement and a significant boost in conversion rates. Highly recommended!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-author-image">
+                            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson">
+                        </div>
+                        <div class="testimonial-author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>CEO, TechInnovate</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial animate-fade-in">
+                    <p class="testimonial-text">
+                        "Working with this team was a game-changer for our brand. Their attention to detail and innovative approach to web design helped us stand out in a crowded market. The 3D product showcases are simply amazing!"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-author-image">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
+                        </div>
+                        <div class="testimonial-author-info">
+                            <h4>Michael Chen</h4>
+                            <p>Marketing Director, FashionForward</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <!-- 3D Canvas Container -->
+        <div id="contact-canvas-container"></div>
+        
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            
+            <div class="contact-container">
+                <div class="contact-info animate-slide-left">
+                    <h3>Let's Start a Conversation</h3>
+                    <p>
+                        Ready to elevate your online presence with stunning 3D elements and modern design? We'd love to hear about your project and discuss how we can help you achieve your goals.
+                    </p>
+                    
+                    <ul class="contact-details">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Design Street, Creative City, 10001</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>hello@modern3d.com</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="contact-social">
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-form animate-slide-right">
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" id="subject" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="gdpr-consent" required>
+                                <span class="checkmark"></span>
+                                I agree to the <a href="#">privacy policy</a> and consent to having my data processed.
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="button form-submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent" class="cookie-consent" style="display: none;">
+        <div class="cookie-content">
+            <p>
+                We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic. By clicking "Accept All", you consent to our use of cookies.
+            </p>
+            <div class="cookie-buttons">
+                <button id="reject-cookies" class="button button-outline">Reject All</button>
+                <button id="accept-cookies" class="button">Accept All</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div>
+                    <div class="footer-logo">
+                        <i class="fas fa-cube"></i> Modern<span>3D</span>
+                    </div>
+                    <p class="footer-description">
+                        Creating stunning websites with modern design and interactive 3D elements that elevate your online presence.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="footer-heading">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">3D Web Elements</a></li>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                        <li><a href="#">Responsive Design</a></li>
+                        <li><a href="#">SEO Optimization</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">GDPR Compliance</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year">2023</span> Modern3D. All rights reserved.</p>
             </div>
         </div>
     </footer>
-
-    <div class="floating-cta">
-        <button class="btn btn-primary" aria-label="Contact Us">
-            <i class="fas fa-comment-dots"></i>
-            <span>Let's Talk</span>
-        </button>
-    </div>
-
+    
+    <!-- Scroll to top button -->
+    <a href="#" id="scroll-to-top" class="scroll-to-top" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    
+    <!-- Custom JavaScript -->
     <script src="script.js"></script>
 </body>
 </html> 
