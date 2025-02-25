@@ -16,14 +16,26 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize form validation
     initFormValidation();
     
-    // Initialize dark mode toggle if present
-    initDarkModeToggle();
-    
-    // Initialize lazy loading for images
-    initLazyLoading();
-    
-    // Initialize GDPR cookie consent
+    // Initialize cookie consent
     initCookieConsent();
+    
+    // Initialize scroll to top button
+    initScrollToTop();
+    
+    // Initialize scroll progress indicator
+    initScrollProgress();
+    
+    // Initialize custom cursor
+    initCustomCursor();
+    
+    // Initialize typed text effect
+    initTypedText();
+    
+    // Set current year in footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    
+    // Load 3D.js script
+    loadThreeJS();
 });
 
 // Header scroll effect
@@ -47,20 +59,40 @@ function initMobileMenu() {
     const mobileMenu = document.querySelector('.mobile-menu');
     
     if (menuBtn && mobileMenu) {
+        // Initially hide the mobile menu
+        mobileMenu.style.display = 'none';
+        
         menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active');
-            menuBtn.classList.toggle('active');
-            
-            // Toggle aria-expanded for accessibility
-            const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
-            menuBtn.setAttribute('aria-expanded', !isExpanded);
+            if (mobileMenu.classList.contains('active')) {
+                mobileMenu.classList.remove('active');
+                mobileMenu.style.display = 'none';
+                menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                menuBtn.setAttribute('aria-expanded', 'false');
+            } else {
+                mobileMenu.classList.add('active');
+                mobileMenu.style.display = 'block';
+                menuBtn.innerHTML = '<i class="fas fa-times"></i>';
+                menuBtn.setAttribute('aria-expanded', 'true');
+            }
+        });
+        
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                mobileMenu.style.display = 'none';
+                menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                menuBtn.setAttribute('aria-expanded', 'false');
+            });
         });
         
         // Close mobile menu when clicking outside
         document.addEventListener('click', (e) => {
             if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
                 mobileMenu.classList.remove('active');
-                menuBtn.classList.remove('active');
+                mobileMenu.style.display = 'none';
+                menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
                 menuBtn.setAttribute('aria-expanded', 'false');
             }
         });
@@ -71,7 +103,7 @@ function initMobileMenu() {
 function initScrollAnimations() {
     const animatedElements = document.querySelectorAll('.animate-fade-in, .animate-slide-left, .animate-slide-right, .animate-scale-in');
     
-    if (animatedElements.length > 0) {
+    if (animatedElements.length > 0 && 'IntersectionObserver' in window) {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -177,6 +209,12 @@ function initFormValidation() {
                 const successMessage = document.createElement('div');
                 successMessage.className = 'success-message';
                 successMessage.textContent = 'Thank you for your message! We will get back to you soon.';
+                successMessage.style.color = '#10b981';
+                successMessage.style.padding = '1rem';
+                successMessage.style.marginTop = '1rem';
+                successMessage.style.backgroundColor = '#f0fdf4';
+                successMessage.style.borderRadius = '0.5rem';
+                successMessage.style.fontWeight = 'bold';
                 
                 contactForm.reset();
                 contactForm.appendChild(successMessage);
@@ -185,9 +223,6 @@ function initFormValidation() {
                 setTimeout(() => {
                     successMessage.remove();
                 }, 5000);
-                
-                // Here you would typically send the form data to a server
-                // For demonstration, we're just showing a success message
             }
         });
     }
@@ -213,64 +248,12 @@ function showError(inputElement, message) {
     
     // Remove error styling when input changes
     inputElement.addEventListener('input', function() {
-        errorElement.remove();
+        const errorMsg = inputElement.parentElement.querySelector('.error-message');
+        if (errorMsg) {
+            errorMsg.remove();
+        }
         inputElement.style.borderColor = '';
     });
-}
-
-// Dark mode toggle
-function initDarkModeToggle() {
-    const darkModeToggle = document.getElementById('dark-mode-toggle');
-    
-    if (darkModeToggle) {
-        // Check for saved user preference
-        const isDarkMode = localStorage.getItem('darkMode') === 'true';
-        
-        // Set initial state
-        if (isDarkMode) {
-            document.body.classList.add('dark-mode');
-            darkModeToggle.checked = true;
-        }
-        
-        // Toggle dark mode
-        darkModeToggle.addEventListener('change', function() {
-            if (this.checked) {
-                document.body.classList.add('dark-mode');
-                localStorage.setItem('darkMode', 'true');
-            } else {
-                document.body.classList.remove('dark-mode');
-                localStorage.setItem('darkMode', 'false');
-            }
-        });
-    }
-}
-
-// Lazy loading for images
-function initLazyLoading() {
-    if ('loading' in HTMLImageElement.prototype) {
-        // Browser supports native lazy loading
-        const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-        lazyImages.forEach(img => {
-            img.src = img.dataset.src;
-        });
-    } else {
-        // Fallback for browsers that don't support native lazy loading
-        const lazyImageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const lazyImage = entry.target;
-                    lazyImage.src = lazyImage.dataset.src;
-                    lazyImage.classList.remove('lazy');
-                    lazyImageObserver.unobserve(lazyImage);
-                }
-            });
-        });
-        
-        const lazyImages = document.querySelectorAll('.lazy');
-        lazyImages.forEach(image => {
-            lazyImageObserver.observe(image);
-        });
-    }
 }
 
 // GDPR Cookie Consent
@@ -292,8 +275,6 @@ function initCookieConsent() {
                 acceptCookiesBtn.addEventListener('click', () => {
                     localStorage.setItem('cookieConsent', 'accepted');
                     cookieConsent.style.display = 'none';
-                    
-                    // Here you would initialize analytics and other cookie-based services
                 });
             }
             
@@ -302,91 +283,133 @@ function initCookieConsent() {
                 rejectCookiesBtn.addEventListener('click', () => {
                     localStorage.setItem('cookieConsent', 'rejected');
                     cookieConsent.style.display = 'none';
-                    
-                    // Here you would ensure no tracking cookies are set
                 });
             }
         }
     }
 }
 
-// Initialize custom cursor if enabled
-function initCustomCursor() {
-    const cursor = document.querySelector('.custom-cursor');
+// Scroll to top button
+function initScrollToTop() {
+    const scrollToTopBtn = document.getElementById('scroll-to-top');
     
-    if (cursor) {
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = `${e.clientX}px`;
-            cursor.style.top = `${e.clientY}px`;
-        });
-        
-        // Add hover effect for interactive elements
-        const interactiveElements = document.querySelectorAll('a, button, .interactive');
-        
-        interactiveElements.forEach(element => {
-            element.addEventListener('mouseenter', () => {
-                cursor.classList.add('cursor-hover');
-            });
-            
-            element.addEventListener('mouseleave', () => {
-                cursor.classList.remove('cursor-hover');
-            });
-        });
-    }
-}
-
-// Initialize scroll progress indicator
-function initScrollProgress() {
-    const progressBar = document.querySelector('.scroll-progress');
-    
-    if (progressBar) {
+    if (scrollToTopBtn) {
+        // Show/hide button based on scroll position
         window.addEventListener('scroll', () => {
-            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrollPercentage = (scrollTop / scrollHeight) * 100;
-            
-            progressBar.style.width = `${scrollPercentage}%`;
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+        
+        // Scroll to top when button is clicked
+        scrollToTopBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
     }
 }
 
-// Initialize typed text effect
-function initTypedText() {
-    const typedElements = document.querySelectorAll('.typed-text');
+// Scroll progress indicator
+function initScrollProgress() {
+    // Create scroll progress element if it doesn't exist
+    let progressBar = document.querySelector('.scroll-progress');
     
-    typedElements.forEach(element => {
-        const text = element.dataset.text.split(',');
-        let currentIndex = 0;
-        let currentText = '';
-        let isDeleting = false;
+    if (!progressBar) {
+        progressBar = document.createElement('div');
+        progressBar.className = 'scroll-progress';
+        document.body.appendChild(progressBar);
+    }
+    
+    // Update progress bar width on scroll
+    window.addEventListener('scroll', () => {
+        const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrollPercentage = (scrollTop / scrollHeight) * 100;
         
-        function type() {
-            const fullText = text[currentIndex];
-            
-            if (isDeleting) {
-                currentText = fullText.substring(0, currentText.length - 1);
-            } else {
-                currentText = fullText.substring(0, currentText.length + 1);
-            }
-            
-            element.textContent = currentText;
-            
-            let typeSpeed = isDeleting ? 50 : 150;
-            
-            if (!isDeleting && currentText === fullText) {
-                typeSpeed = 2000; // Pause at the end of typing
-                isDeleting = true;
-            } else if (isDeleting && currentText === '') {
-                isDeleting = false;
-                currentIndex = (currentIndex + 1) % text.length;
-                typeSpeed = 500; // Pause before typing next word
-            }
-            
-            setTimeout(type, typeSpeed);
-        }
-        
-        type();
+        progressBar.style.width = `${scrollPercentage}%`;
     });
+}
+
+// Custom cursor
+function initCustomCursor() {
+    // Create custom cursor element if it doesn't exist
+    let cursor = document.querySelector('.custom-cursor');
+    
+    if (!cursor) {
+        cursor = document.createElement('div');
+        cursor.className = 'custom-cursor';
+        document.body.appendChild(cursor);
+    }
+    
+    // Update cursor position on mouse move
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = `${e.clientX}px`;
+        cursor.style.top = `${e.clientY}px`;
+    });
+    
+    // Add hover effect for interactive elements
+    const interactiveElements = document.querySelectorAll('a, button, .service-card, .project-card, .social-icon');
+    
+    interactiveElements.forEach(element => {
+        element.addEventListener('mouseenter', () => {
+            cursor.classList.add('cursor-hover');
+        });
+        
+        element.addEventListener('mouseleave', () => {
+            cursor.classList.remove('cursor-hover');
+        });
+    });
+}
+
+// Typed text effect
+function initTypedText() {
+    const typedElement = document.getElementById('typed-text');
+    
+    if (typedElement && typeof Typed !== 'undefined') {
+        new Typed(typedElement, {
+            strings: [
+                'modern design.',
+                'interactive 3D elements.',
+                'exceptional user experience.',
+                'cutting-edge technology.',
+                'responsive layouts.',
+                'SEO optimization.'
+            ],
+            typeSpeed: 50,
+            backSpeed: 30,
+            backDelay: 1500,
+            startDelay: 500,
+            loop: true,
+            smartBackspace: true
+        });
+    }
+}
+
+// Load 3D.js script
+function loadThreeJS() {
+    if (document.querySelector('#hero-canvas-container') || 
+        document.querySelector('#project-canvas-container') || 
+        document.querySelector('#contact-canvas-container')) {
+        
+        // Create script element for 3D.js
+        const script = document.createElement('script');
+        script.src = '3d.js';
+        script.async = true;
+        
+        // Add error handling
+        script.onerror = function() {
+            console.error('Failed to load 3d.js. Please check if the file exists.');
+        };
+        
+        document.body.appendChild(script);
+        
+        console.log('3D.js script loaded');
+    }
 }
 
 // Initialize counters animation
@@ -439,21 +462,4 @@ function initParallaxScrolling() {
             });
         });
     }
-}
-
-// Load 3D.js script after DOM is loaded
-function loadThreeJS() {
-    if (document.querySelector('#hero-canvas-container') || 
-        document.querySelector('#project-canvas-container') || 
-        document.querySelector('#contact-canvas-container')) {
-        
-        // Create script element for 3D.js
-        const script = document.createElement('script');
-        script.src = '3d.js';
-        script.async = true;
-        document.body.appendChild(script);
-    }
-}
-
-// Call loadThreeJS after DOM is loaded
-document.addEventListener('DOMContentLoaded', loadThreeJS); 
+} 
