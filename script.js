@@ -1,4 +1,4 @@
-// Main JavaScript file for the modern website with 3D elements
+// Main JavaScript file for the Startplatz AI Hub website
 
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize header scroll effect
@@ -31,11 +31,20 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize typed text effect
     initTypedText();
     
+    // Initialize counters animation
+    initCounters();
+    
+    // Initialize parallax scrolling effect
+    initParallaxScrolling();
+    
     // Set current year in footer
     document.getElementById('current-year').textContent = new Date().getFullYear();
     
     // Load 3D.js script
     loadThreeJS();
+    
+    // Initialize glitch effect
+    initGlitchEffect();
 });
 
 // Header scroll effect
@@ -182,25 +191,25 @@ function initFormValidation() {
             
             // Validate name
             if (!nameInput.value.trim()) {
-                showError(nameInput, 'Please enter your name');
+                showError(nameInput, 'Bitte geben Sie Ihren Namen ein');
                 isValid = false;
             }
             
             // Validate email
             if (!validateEmail(emailInput.value)) {
-                showError(emailInput, 'Please enter a valid email address');
+                showError(emailInput, 'Bitte geben Sie eine gültige E-Mail-Adresse ein');
                 isValid = false;
             }
             
             // Validate message
             if (!messageInput.value.trim()) {
-                showError(messageInput, 'Please enter your message');
+                showError(messageInput, 'Bitte geben Sie Ihre Nachricht ein');
                 isValid = false;
             }
             
             // Validate GDPR consent
             if (gdprCheckbox && !gdprCheckbox.checked) {
-                showError(gdprCheckbox.parentElement, 'Please agree to the privacy policy');
+                showError(gdprCheckbox.parentElement, 'Bitte stimmen Sie der Datenschutzerklärung zu');
                 isValid = false;
             }
             
@@ -208,7 +217,7 @@ function initFormValidation() {
                 // Show success message
                 const successMessage = document.createElement('div');
                 successMessage.className = 'success-message';
-                successMessage.textContent = 'Thank you for your message! We will get back to you soon.';
+                successMessage.textContent = 'Vielen Dank für Ihre Nachricht! Wir werden uns in Kürze bei Ihnen melden.';
                 successMessage.style.color = '#10b981';
                 successMessage.style.padding = '1rem';
                 successMessage.style.marginTop = '1rem';
@@ -373,12 +382,12 @@ function initTypedText() {
     if (typedElement && typeof Typed !== 'undefined') {
         new Typed(typedElement, {
             strings: [
-                'modern design.',
-                'interactive 3D elements.',
-                'exceptional user experience.',
-                'cutting-edge technology.',
-                'responsive layouts.',
-                'SEO optimization.'
+                'KI-Strategieberatung',
+                'Individuelle KI-Lösungen',
+                'KI-Workshops & Trainings',
+                'Startups & Corporate Matchmaking',
+                'KI-Inkubator & Accelerator',
+                'Data Science & ML Projekte'
             ],
             typeSpeed: 50,
             backSpeed: 30,
@@ -462,4 +471,24 @@ function initParallaxScrolling() {
             });
         });
     }
+}
+
+// Initialize glitch effect
+function initGlitchEffect() {
+    const glitchElements = document.querySelectorAll('.glitch-effect');
+    
+    glitchElements.forEach(element => {
+        if (!element.hasAttribute('data-text')) {
+            element.setAttribute('data-text', element.textContent);
+        }
+        
+        // Add random glitch animation
+        setInterval(() => {
+            element.classList.add('active-glitch');
+            
+            setTimeout(() => {
+                element.classList.remove('active-glitch');
+            }, 200);
+        }, Math.random() * 5000 + 3000); // Random interval between 3-8 seconds
+    });
 } 

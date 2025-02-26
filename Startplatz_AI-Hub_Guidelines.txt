@@ -1,0 +1,137 @@
+Überblick
+Dieses Dokument dient als zentrale Content-Richtlinie für die Website des Startplatz AI Hub. Es umfasst alle relevanten Inhalte sowie Style-Anweisungen für Tonalität, Struktur und visuelle Gestaltung. Ziel ist es, eine moderne, innovative und professionell ansprechende Plattform zu schaffen, die unsere KI-Expertise, Produkte und Community-Angebote klar kommuniziert.
+
+📌 Inhaltsübersicht
+Hero-Section (Startseite) 🎯
+About Us – Über den Startplatz AI Hub 🏢
+Our Services – Unsere Dienstleistungen 💡
+Projekte – Unsere Referenzen 🚀
+Testimonials – Was unsere Klienten sagen 💬
+Call-to-Action – Kontakt & Newsletter 📩
+Blog & Ressourcen – Insights aus der KI-Welt 📚
+Footer – Rechtliches & Navigation 🔗
+1️⃣ Hero-Section (Startseite) 🎯
+🔹 Ziel:
+Sofortige Klarheit darüber, wer wir sind und was wir tun. Besucher:innen müssen in den ersten Sekunden verstehen, warum der Startplatz AI Hub die richtige Anlaufstelle für sie ist.
+
+🔹 Inhalt:
+Headline:
+"KI-Innovation beginnt hier – Der Startplatz AI Hub"
+
+Subheadline:
+"Wir verbinden Unternehmen, Startups & Talente mit zukunftsweisender KI-Technologie."
+
+Visuelle Elemente:
+✅ Dynamische Key Visuals mit holografischen Strukturen & Neon-Akzenten
+✅ Leichte Glitch-Effekte für digitalen Vibe
+✅ Fließende Farbverläufe in Neonblau & Violett (#00FFFF, #9535FF, #36036C)
+✅ Call-to-Action (CTA): „Jetzt mit uns durchstarten!“ (Button zu Kontakt oder Services)
+
+2️⃣ About Us – Über den Startplatz AI Hub 🏢
+🔹 Ziel:
+Unsere Mission, Vision und unser Netzwerk klar und inspirierend darstellen.
+
+🔹 Inhalt:
+Wer sind wir?
+
+Der Startplatz AI Hub ist das führende Innovationszentrum für KI-gestützte Geschäftsmodelle.
+Unser Fokus: Startups, Corporates & Talente vernetzen, um mit KI echte Mehrwerte zu schaffen.
+Wir bieten ein starkes Ökosystem aus Expert:innen, Mentoren & Praxisprojekten.
+Unsere Mission:
+"Wir machen KI zugänglich! Unser Ziel ist es, Unternehmen und Startups zu befähigen, KI strategisch zu nutzen und innovative Lösungen zu entwickeln."
+
+Unsere Vision:
+"Wir wollen Europas führender KI-Hub für Business-Innovation werden und eine Brücke zwischen Wissenschaft und Praxis schlagen."
+
+✅ Visuell:
+
+Hochwertige Bilder unseres Teams & unserer Community
+Moderne, cleane Typografie mit leichtem Digital-Touch
+Farbschema: Neon-Violett & Dunkelblau als Basis für Tech-Feeling
+3️⃣ Our Services – Unsere Dienstleistungen 💡
+🔹 Ziel:
+Unsere konkreten Services klar verständlich und ansprechend präsentieren.
+
+🔹 Inhalt:
+KI-Strategieberatung → Wo & wie KI im Business gewinnbringend eingesetzt werden kann
+Individuelle KI-Lösungen & Prototyping → Entwicklung von MVPs & skalierbaren KI-Produkten
+KI-Workshops & Trainings → Wissen aufbauen und Mitarbeitende fit für KI machen
+Startups & Corporate Matchmaking → Vernetzung mit relevanten Playern aus der Branche
+KI-Inkubator & Accelerator Programme → Unterstützung für Startups von der frühen Phase bis zur Skalierung
+Data Science & Machine Learning Projekte → Entwicklung von ML-Modellen & Datenanalysen
+✅ Visuell:
+
+Icons für jeden Service für eine intuitive Übersicht
+Glitch-inspirierte Übergänge zwischen den Abschnitten
+CTA nach jedem Service: „Jetzt mehr erfahren“
+4️⃣ Projekte – Unsere Referenzen 🚀
+🔹 Ziel:
+Erfolgreiche Projekte präsentieren, um Glaubwürdigkeit und Expertise zu unterstreichen.
+
+🔹 Inhalt:
+Kurz-Intro: „Wir arbeiten mit innovativen Unternehmen zusammen, um die Zukunft mit KI zu gestalten.“
+Projektübersicht (Beispiele):
+KI-gestützte Prozessautomatisierung für ein Logistikunternehmen
+Computer Vision für die Qualitätssicherung in der Produktion
+Predictive Analytics für eine E-Commerce-Plattform
+✅ Visuell:
+
+High-Quality Mockups & Case Study Designs
+Minimalistische, cleane Darstellung mit Hover-Effekten
+CTA: Interesse an einem eigenen KI-Projekt? Jetzt Kontakt aufnehmen!
+5️⃣ Testimonials – Was unsere Klienten sagen 💬
+🔹 Ziel:
+Vertrauen aufbauen durch echte Kundenstimmen.
+
+🔹 Inhalt:
+Kundenstimmen mit Bild & Name
+Logo-Slider mit bisherigen Partnern & Kunden
+✅ Visuell:
+
+Dynamische Slider-Animationen
+Dezente Glitch-Elemente für Tech-Charakter
+6️⃣ Call-to-Action – Kontakt & Newsletter 📩
+🔹 Ziel:
+Klare Handlungsaufforderung für Besucher:innen.
+
+🔹 Inhalt:
+Kontaktformular: Jetzt mit uns ins Gespräch kommen!
+Newsletter-Anmeldung: Regelmäßige Insights zu KI & Innovation.
+Social Media Links: LinkedIn, Twitter/X, etc.
+✅ Visuell:
+
+Neon-Glowing Buttons für starke CTAs
+Leichte Animationen für Interaktivität
+7️⃣ Blog & Ressourcen – Insights aus der KI-Welt 📚
+🔹 Ziel:
+Wissen & Trends teilen, um unsere Autorität in der KI-Community zu stärken.
+
+🔹 Inhalt:
+KI-Trends & Forschung
+Best Practices für KI-Integration
+Interviews mit Experten
+✅ Visuell:
+
+Blog-Karten mit Hover-Effekten
+Dynamische Kategoriefilter
+8️⃣ Footer – Rechtliches & Navigation 🔗
+🔹 Ziel:
+Wichtige Infos und Links übersichtlich bereitstellen.
+
+🔹 Inhalt:
+Navigation: Home | About | Services | Blog | Kontakt
+Rechtliches: Datenschutz | Impressum
+Social Media Links
+✅ Visuell:
+
+Dunkler Hintergrund mit subtiler Glitch-Textur
+Icons für Social Media & Rechtliches
+🎨 Design & Style Guidelines
+🔹 Farbpalette 🎨
+✅ Primär: Neonblau (#00FFFF), Light Purple (#9535FF), Deep Purple (#36036C)
+✅ Sekundär: Glowing White (#FFFFFF mit Cyan-/Violett-Glow)
+✅ Hintergrund: Dunkel (fast schwarz) mit subtilen Highlights
+
+🔹 Typografie
+✅ Modern, leicht glitch-inspirierte Sans-Serif-Schrift
+✅ Klare, gut lesbare Hierarchien
