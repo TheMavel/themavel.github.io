@@ -725,21 +725,42 @@ header.scrolled {
 /* Testimonials section styles */
 .testimonials {
     background-color: var(--neutral-950);
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonials::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(0, 255, 255, 0.05), transparent 70%);
+    z-index: 0;
+    pointer-events: none;
 }
 
 .testimonials-container {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 2rem;
+    position: relative;
+    z-index: 1;
 }
 
 .testimonial {
-    background-color: var(--neutral-900);
+    background-color: rgba(20, 20, 40, 0.5);
     border-radius: var(--radius-lg);
     padding: var(--spacing-xl);
     box-shadow: var(--shadow-md);
-    margin-bottom: var(--spacing-xl);
     position: relative;
     border: 1px solid rgba(149, 53, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
 }
 
 .testimonial::before {
@@ -754,10 +775,17 @@ header.scrolled {
     line-height: 1;
 }
 
+.testimonial:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 255, 255, 0.2);
+    border-color: rgba(0, 255, 255, 0.3);
+}
+
 .testimonial-text {
     font-style: italic;
-    color: var(--neutral-700);
+    color: rgba(255, 255, 255, 0.8);
     margin-bottom: var(--spacing-lg);
+    line-height: 1.7;
 }
 
 .testimonial-author {
@@ -771,6 +799,8 @@ header.scrolled {
     height: 60px;
     border-radius: var(--radius-full);
     overflow: hidden;
+    border: 2px solid var(--primary-light);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
 }
 
 .testimonial-author-image img {
@@ -780,13 +810,14 @@ header.scrolled {
 }
 
 .testimonial-author-info h4 {
-    margin-bottom: 0;
+    margin-bottom: 0.25rem;
     font-size: 1.125rem;
+    color: var(--primary-light);
 }
 
 .testimonial-author-info p {
     margin-bottom: 0;
-    color: var(--neutral-500);
+    color: rgba(255, 255, 255, 0.7);
     font-size: 0.875rem;
 }
 
@@ -1093,6 +1124,10 @@ footer {
     .contact-container {
         grid-template-columns: 1fr;
         gap: 3rem;
+    }
+    
+    .testimonials-container {
+        grid-template-columns: 1fr;
     }
 }
 
