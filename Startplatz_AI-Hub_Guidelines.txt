@@ -124,13 +124,7 @@ Rechtliches: Datenschutz | Impressum
 Social Media Links
 ✅ Visuell:
 
-Dunkler Hintergrund mit subtiler Glitch-Textur
-Icons für Social Media & Rechtliches
-🎨 Design & Style Guidelines
-🔹 Farbpalette 🎨
-✅ Primär: Neonblau (#00FFFF), Light Purple (#9535FF), Deep Purple (#36036C)
-✅ Sekundär: Glowing White (#FFFFFF mit Cyan-/Violett-Glow)
-✅ Hintergrund: Dunkel (fast schwarz) mit subtilen Highlights
+
 
 🔹 Typografie
 ✅ Modern, leicht glitch-inspirierte Sans-Serif-Schrift
